@@ -4,7 +4,7 @@ import { ResourcePicker } from "@shopify/app-bridge-react";
 
 const Index = () => {
 
-  const [appendTitle, setAppendToTitle] = useState('');
+  const [appendToTitle, setAppendToTitle] = useState('');
   const [appendToDescription, setAppendToDescription] = useState('');
   const [appendPrice, setAppendPrice] = useState('');
   const [pickerOpen, setPickerOpen] = useState(false);
@@ -19,18 +19,18 @@ const Index = () => {
           <Stack vertical>
             <TextField
               label="Append to title"
-              value="{appendToTitle}"
+              value={appendToTitle}
               onChange={setAppendToTitle}
             />
             <TextField
               label="Append to description"
-              value="{appendToDescription}"
+              value={appendToDescription}
               onChange={setAppendToDescription}
               multiline={3}
             />
             <TextField
               label="Append to price"
-              value="{appendPrice}"
+              value={appendPrice}
               onChange={setAppendPrice}
             />
             <ResourcePicker
