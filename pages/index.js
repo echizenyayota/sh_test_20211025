@@ -1,7 +1,9 @@
 import {useState} from "react";
 import { Button, Card, Heading, Page, Stack, TextField } from "@shopify/polaris";
+import { ResourcePicker } from "@shopify/app-bridge-react";
 
 const Index = () => {
+
   const [appendTitle, setAppendToTitle] = useState('');
   const [appendToDescription, setAppendToDescription] = useState('');
   const [appendPrice, setAppendPrice] = useState('');
@@ -21,7 +23,7 @@ const Index = () => {
               onChange={setAppendToTitle}
             />
             <TextField
-              label="Append to desciption"
+              label="Append to description"
               value="{appendToDescription}"
               onChange={setAppendToDescription}
               multiline={3}
@@ -31,6 +33,16 @@ const Index = () => {
               value="{appendPrice}"
               onChange={setAppendPrice}
             />
+            <ResourcePicker
+              resourceType="Product"
+              showVarainats={false}
+              open={pickerOpen}
+              onSelection={(resource) => {
+                console.log(resources);
+                setProducts(resources.selection);
+              }}
+            />
+            <Button primary onClick={() => setPickerOpen(true)}>Select Products</Button>
           </Stack>
         </Card.Section>
       </Card>
