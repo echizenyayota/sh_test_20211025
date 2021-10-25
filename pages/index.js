@@ -1,9 +1,21 @@
+import {useState} from "react";
 import { Heading, Page } from "@shopify/polaris";
 
-const Index = () => (
-  <Page>
-    <Heading>Shopify app with Node and React 🎉</Heading>
-  </Page>
-);
+const Index = () => {
+  const [appendTitle, setAppendToTitle] = useState('');
+  const [appendToDescription, setAppendToDescription] = useState('');
+  const [appendPrice, setAppendPrice] = useState('');
+  const [pickerOpen, setPickerOpen] = useState(false);
+  const [products, setProducts] = useState([]);
+  const [showToast, setShowToast] = useState(false);
+
+  return (
+    <Page>
+      <Heading>Product Updater App</Heading>
+    </Page>
+  );
+
+
+};
 
 export default Index;
